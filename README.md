@@ -39,8 +39,8 @@ file-uploader-webapp/
 │
 ├── backend/
 │   ├── uploaded_files/      # Storage directory for user uploads
-│   ├── models/
-│   │   └── model.py         # Pydantic models for validation
+│   ├── schemas/
+│   │   └── schema.py         # Pydantic models for validation
 │   └── app.py               # Main FastAPI application entry point
 │
 ├── frontend/

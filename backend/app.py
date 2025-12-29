@@ -6,7 +6,7 @@ import os
 from typing import List
 import aiofiles
 from fastapi.staticfiles import StaticFiles
-from models.model import UploadResponse
+from schemas.schema import UploadResponse
 
 app = FastAPI()
 
