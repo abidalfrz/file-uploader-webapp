@@ -30,7 +30,7 @@ def home():
 async def upload_file(file_upload: UploadFile = File(...)):
 
     _, ext = os.path.splitext(file_upload.filename)
-    unique_filename = f"{uuid.uuid4()}{ext}"
+    unique_filename = f"{uuid.uuid4()}_{file_upload.filename}"
     
     data = await file_upload.read()
 
