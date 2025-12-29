@@ -1,0 +1,55 @@
+/* File List Grid System */
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.file-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.file-card:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  border-color: var(--secondary-color);
+}
+
+.file-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.file-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  word-break: break-word; /* Agar nama file panjang turun ke bawah */
+}
+
+.btn-view {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  border: 2px solid var(--primary-color);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+}
+
+.btn-view:hover {
+  background: var(--primary-color);
+  color: white;
+}
