@@ -29,7 +29,6 @@ def home():
 @app.post("/files/upload/", response_model=UploadResponse)
 async def upload_file(file_upload: UploadFile = File(...)):
 
-    _, ext = os.path.splitext(file_upload.filename)
     unique_filename = f"{uuid.uuid4()}_{file_upload.filename}"
     
     data = await file_upload.read()
