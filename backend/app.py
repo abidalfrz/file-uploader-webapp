@@ -1,7 +1,7 @@
 from fastapi import FastAPI, UploadFile, File
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
-import shutil
+import uuid
 import os
 from typing import List
 import aiofiles
@@ -28,15 +28,18 @@ def home():
 
 @app.post("/files/upload/", response_model=UploadResponse)
 async def upload_file(file_upload: UploadFile = File(...)):
+
+    _, ext = os.path.splitext(file_upload.filename)
+    unique_filename = f"{uuid.uuid4()}{ext}"
     
     data = await file_upload.read()
 
-    save_path = f"./uploaded_files/{file_upload.filename}"
+    save_path = f"./uploaded_files/{unique_filename}"
 
     async with aiofiles.open(save_path, 'wb') as out_file:
         await out_file.write(data)
 
-    return {"filename": file_upload.filename}
+    return {"filename": unique_filename}
 
 @app.get("/files/all", response_model=List[UploadResponse])
 def list_files():
