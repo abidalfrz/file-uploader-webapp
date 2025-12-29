@@ -1,12 +1,12 @@
 from fastapi import FastAPI, UploadFile, File
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, Field
 import shutil
 import os
 from typing import List
 import aiofiles
 from fastapi.staticfiles import StaticFiles
+from models.model import UploadResponse
 
 app = FastAPI()
 
@@ -21,12 +21,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-class UploadResponse(BaseModel):
-    filename: str
-
-    class config:
-        orm_mode = True
 
 @app.get("/")
 def home():
@@ -52,4 +46,8 @@ def list_files():
     return [{"filename": filename} for filename in files]
 
 if __name__ == "__main__":
-    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
+    FILE_NAME = "app"
+    APPLICATION_NAME = "app"
+    HOST = "127.0.0.1"
+    PORT = 8000
+    uvicorn.run(f"{FILE_NAME}:{APPLICATION_NAME}", host=HOST, port=PORT, reload=True)
