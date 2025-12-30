@@ -40,7 +40,7 @@ async def upload_file(file_upload: UploadFile = File(...)):
 
     return {"filename": unique_filename}
 
-@app.get("/files/all", response_model=List[UploadResponse])
+@app.get("/files/all/", response_model=List[UploadResponse])
 def list_files():
     files = os.listdir("./uploaded_files")
 

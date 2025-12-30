@@ -7,7 +7,7 @@ function Filelist() {
     useEffect(() => {
         const fetchFiles = async () => {
             try {
-                const response = await fetch("http://localhost:8000/files/all");
+                const response = await fetch("http://localhost:8000/files/all/");
                 const data = await response.json();
                 setFiles(data);
             } catch (error) {
