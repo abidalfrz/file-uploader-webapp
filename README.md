@@ -81,16 +81,17 @@ file-uploader-webapp/
 
 ## 🚀 How to Run
 
-To run this project on your local machine, you need to run the backend and frontend in separate terminals.
 
-## Option 1: Manual Setup
-
-### 1. Clone the Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/abidalfrz/file-uploader-webapp.git
 cd file-uploader-webapp
 ```
+
+## Option 1: Manual Setup
+
+In option 1, to run this project on your local machine, you need to run the backend and frontend in separate terminals.
 
 ### 2. Setup Backend (Terminal 1)
 
