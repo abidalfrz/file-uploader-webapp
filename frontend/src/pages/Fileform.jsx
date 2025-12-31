@@ -1,9 +1,11 @@
 import '../css/Fileform.css'
 import { use, useState } from 'react'
+import { useFileContext } from '../context/Filecontext'
 
 function Fileform() {
     const [file, setFile] = useState(null);
     const [status, setStatus] = useState("");
+    const { addFile } = useFileContext();
 
     const handleFileInput = (e) => {
         console.log(e.target.files);
@@ -17,6 +19,7 @@ function Fileform() {
 
         const formData = new FormData();
         formData.append("file_upload", file);
+        console.log(formData.get("file_upload"));
 
         try{
             setStatus("Uploading...");
@@ -27,6 +30,8 @@ function Fileform() {
             });
 
             if (response.ok) {
+                const data = await response.json();
+                addFile(data);
                 setStatus("File uploaded successfully!");
                 setFile(null);
                 document.getElementById("fileInput").value = "";

@@ -1,21 +1,28 @@
 import { useEffect, useState } from "react"
 import "../css/Filelist.css"
+import { useFileContext } from "../context/Filecontext"
 
 function Filelist() {
-    const [files, setFiles] = useState([]);
+    // const [files, setFiles] = useState([]);
 
-    useEffect(() => {
-        const fetchFiles = async () => {
-            try {
-                const response = await fetch("http://localhost:8000/files/all/");
-                const data = await response.json();
-                setFiles(data);
-            } catch (error) {
-                console.error("Error fetching files:", error);
-            }
-        };
-        fetchFiles();
-    }, []);
+    // useEffect(() => {
+    //     const fetchFiles = async () => {
+    //         try {
+    //             const response = await fetch("http://localhost:8000/files/all/");
+    //             const data = await response.json();
+    //             setFiles(data);
+    //         } catch (error) {
+    //             console.error("Error fetching files:", error);
+    //         }
+    //     };
+    //     fetchFiles();
+    // }, []);
+
+    const { files, loading } = useFileContext();
+
+    if (loading) {
+        return <div className="page-container"><h2>Loading files...</h2></div>;
+    }
 
     return (
         <div className="page-container">

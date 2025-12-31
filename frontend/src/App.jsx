@@ -6,21 +6,23 @@ import Fileform from './pages/Fileform'
 import Filelist from './pages/Filelist'
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import Navbar from './components/Navbar'
+import { FileProvider } from './context/Filecontext'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <Router>
-      <Navbar />
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<Fileform />} />
-          <Route path="/files" element={<Filelist />} />
-        </Routes>
-      </div>
-      </Router>
+      <FileProvider>
+        <Router>
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Fileform />} />
+            <Route path="/files" element={<Filelist />} />
+          </Routes>
+        </div>
+        </Router>
+      </FileProvider>
     </>
   )
 }
