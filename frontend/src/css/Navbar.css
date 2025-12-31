@@ -23,6 +23,11 @@
   gap: 10px;
 }
 
+.nav-logo {
+  text-decoration: none;
+  color: white;
+}
+
 .nav-links { display: flex; gap: 30px; }
 
 .nav-item {

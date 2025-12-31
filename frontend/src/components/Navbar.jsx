@@ -5,7 +5,11 @@ function Navbar() {
 
     return (
         <nav className="navbar">
-            <div className="nav-brand">📂 MyFiles</div>
+            <div className="nav-brand">
+                <Link to="/" className="nav-logo">
+                    📂 MyFiles
+                </Link>
+            </div>
             <div className="nav-links">
                 <Link to="/" className="nav-item">Upload File</Link>
                 <Link to="/files" className="nav-item">View Files</Link>
