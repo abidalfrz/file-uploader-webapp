@@ -1,0 +1,7 @@
+node_modules
+venv
+__pycache__
+.git
+.gitignore
+backend/uploaded_files/*
+!backend/uploaded_files/.keep

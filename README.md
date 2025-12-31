@@ -29,6 +29,11 @@ This repository contains a full-stack web application designed for seamless file
 - **Vite**
 - **React Router DOM**
 - **CSS**
+- **Node.js v22+ & npm**
+
+<b>Containerization:**
+- **Docker**
+- **Docker Desktop**
 
 ---
 
@@ -41,6 +46,8 @@ file-uploader-webapp/
 │   ├── uploaded_files/      # Storage directory for user uploads
 │   ├── schemas/
 │   │   └── schema.py         # Pydantic models for validation
+|   ├── Dockerfile             # Docker configuration for backend
+│   ├── requirements.txt      # Backend Python dependencies
 │   └── app.py               # Main FastAPI application entry point
 │
 ├── frontend/
@@ -61,17 +68,22 @@ file-uploader-webapp/
 │   │   └── main.jsx         # React entry point
 │   ├── index.html
 │   ├── package.json
+|   ├── package-lock.json
+│   ├── Dockerfile           # Docker configuration for frontend
 │   └── vite.config.js
 │
 ├── .gitignore
+├── .dockerignore
 ├── README.md
-└── requirements.txt         # Python dependencies
+└── docker-compose.yml       # Docker Compose configuration
 ```
 ---
 
 ## 🚀 How to Run
 
 To run this project on your local machine, you need to run the backend and frontend in separate terminals.
+
+## Option 1: Manual Setup
 
 ### 1. Clone the Repository
 
@@ -88,11 +100,12 @@ python -m venv venv
 source venv/bin/activate      # On Linux/macOS
 venv\Scripts\activate.bat     # On Windows
 
+cd backend
+
 # Install Dependencies
 pip install -r requirements.txt
 
 # Run the FastAPI Server
-cd backend
 python app.py
 
 # The Backend API will be accessible at http://127.0.0.1:8000
@@ -111,7 +124,18 @@ npm run dev
 # The Frontend will be accessible at http://localhost:5173 (or another port if 5173 is occupied)
 ``` 
 
-### 4. Access the Application
+## Option 2: Docker Setup
+
+Make sure you have installed docker desktop in your machine.
+
+### 1. Build and Run with Docker Compose
+
+```bash
+docker-compose up --build
+```
+This command will build and start both the backend and frontend services defined in the `docker-compose.yml` file.
+
+## Access the Application
 
 Open your web browser and navigate to the URL shown in your frontend terminal (usually http://localhost:5173).
 

@@ -3,6 +3,21 @@ import "../css/Filelist.css"
 import { useFileContext } from "../context/Filecontext"
 
 function Filelist() {
+        // const [files, setFiles] = useState([]);
+
+    // useEffect(() => {
+    //     const fetchFiles = async () => {
+    //         try {
+    //             const response = await fetch("http://localhost:8000/files/all/");
+    //             const data = await response.json();
+    //             setFiles(data);
+    //         } catch (error) {
+    //             console.error("Error fetching files:", error);
+    //         }
+    //     };
+    //     fetchFiles();
+    // }, []);
+    
     const { files, loading } = useFileContext();
 
     if (loading) {
