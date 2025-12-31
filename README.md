@@ -31,7 +31,7 @@ This repository contains a full-stack web application designed for seamless file
 - **CSS**
 - **Node.js v22+ & npm**
 
-<b>Containerization:**
+<b>Containerization:</b>
 - **Docker**
 - **Docker Desktop**
 
@@ -46,7 +46,7 @@ file-uploader-webapp/
 │   ├── uploaded_files/      # Storage directory for user uploads
 │   ├── schemas/
 │   │   └── schema.py         # Pydantic models for validation
-|   ├── Dockerfile             # Docker configuration for backend
+│   ├── Dockerfile             # Docker configuration for backend
 │   ├── requirements.txt      # Backend Python dependencies
 │   └── app.py               # Main FastAPI application entry point
 │
@@ -68,7 +68,7 @@ file-uploader-webapp/
 │   │   └── main.jsx         # React entry point
 │   ├── index.html
 │   ├── package.json
-|   ├── package-lock.json
+│   ├── package-lock.json
 │   ├── Dockerfile           # Docker configuration for frontend
 │   └── vite.config.js
 │
