@@ -93,7 +93,7 @@ cd file-uploader-webapp
 
 In option 1, to run this project on your local machine, you need to run the backend and frontend in separate terminals.
 
-### 2. Setup Backend (Terminal 1)
+### 1. Setup Backend (Terminal 1)
 
 ```bash
 # Create Virtual Environment
@@ -111,7 +111,7 @@ python app.py
 
 # The Backend API will be accessible at http://127.0.0.1:8000
 ```
-### 3. Setup Frontend (Terminal 2)
+### 2. Setup Frontend (Terminal 2)
 
 ```bash
 # Navigate to Frontend Directory
