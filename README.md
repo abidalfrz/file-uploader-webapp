@@ -17,23 +17,20 @@ This repository contains a full-stack web application designed for seamless file
 
 ## 🛠️ Tech Stack
 
-<b>Backend:</b>
-- **Python**
-- **FastAPI**
-- **Uvicorn**
-- **aiofiles**
+### Backend:
+- **Language:** Python
+- **Framework:** FastAPI
+- **ASGI Server:** Uvicorn
+- **Validation:** Pydantic
+- **Async File Handling:** aiofiles
 
-<b>Frontend:</b>
-- **JavaScript**
-- **React**
-- **Vite**
-- **React Router DOM**
-- **CSS**
-- **Node.js v22+ & npm**
+### Frontend:
+- **Framework:** React.js (vite)
+- **Styling:** CSS
+- **Runtime:** Node.js v22+ & npm
 
-<b>DevOps & Tools:</b>
-- **Docker**
-- **Docker Desktop**
+### DevOps:
+- **Containerization:** Docker & Docker Desktop
 
 ---
 
