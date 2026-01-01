@@ -31,7 +31,7 @@ This repository contains a full-stack web application designed for seamless file
 - **CSS**
 - **Node.js v22+ & npm**
 
-<b>Containerization:</b>
+<b>DevOps & Tools:</b>
 - **Docker**
 - **Docker Desktop**
 
